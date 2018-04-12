@@ -3,6 +3,30 @@
 
 #eh-header{
 
+  .uk-navbar-sticky{
+
+    background-color: $bright;
+    color: $dark;
+    height: 40px;
+
+    *{
+
+      color: $dark !important;
+
+    }
+
+    #logo{
+
+      img{
+
+        height: 40px;
+
+      }
+
+    }
+
+  }
+
   #logo{
 
     overflow: hidden;

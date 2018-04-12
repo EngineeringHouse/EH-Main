@@ -1,5 +1,5 @@
-<header id="eh-header">
-    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+<header id="eh-header" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container uk-navbar-transparent transition" uk-navbar>
 
         <div class="uk-navbar-left padding-left">
 
@@ -19,7 +19,7 @@
                 @else
                     <li>
                         <a class="nav-link white-text" href="#">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->name }}
                         </a>
 
                         <div class="uk-navbar-dropdown">

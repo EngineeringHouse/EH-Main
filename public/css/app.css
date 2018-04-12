@@ -1,4 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Raleway:300,400|Slabo+27px);#eh-header #logo {
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Raleway:300,400|Slabo+27px);#eh-header .uk-navbar-sticky {
+  background-color: #fff;
+  color: #0f0f0f;
+  height: 40px;
+}
+
+#eh-header .uk-navbar-sticky * {
+  color: #0f0f0f !important;
+}
+
+#eh-header .uk-navbar-sticky #logo img {
+  height: 40px;
+}
+
+#eh-header #logo {
   overflow: hidden;
 }
 

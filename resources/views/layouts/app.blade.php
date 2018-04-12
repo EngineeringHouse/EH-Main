@@ -4,6 +4,8 @@
 
     @include('includes.head')
 
+    @yield('page_head')
+
     <title>@yield('title', 'Home') | {{ config('app.name', 'Laravel') }}</title>
 
 </head>
@@ -19,5 +21,8 @@
         @include('includes.footer')
 
     </div>
+
+    @yield('scripts')
+
 </body>
 </html>
