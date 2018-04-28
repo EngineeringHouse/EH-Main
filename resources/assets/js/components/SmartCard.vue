@@ -11,20 +11,20 @@
                 </div>
             </div>
             <div class="collapsable" v-bind:class="{ inactive: !state.active }" v-on:change="sendCall">
-                    <div class="uk-card-body">
-                        <label class="uk-form-label" for="form-stacked-select">Select an Option!</label>
-                        <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select" v-on:change="sendCall">
-                                <option v-for="option in options" v-if="option.visible" :selected="initial == option.name">
-                                    {{option.human}}
-                                </option>
+                <div class="uk-card-body">
+                    <label class="uk-form-label" for="form-stacked-select">Select an Option!</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" id="form-stacked-select" v-on:change="sendCall">
+                            <option v-for="option in options" v-if="option.visible" :selected="initial == option.name">
+                                {{option.human}}
+                            </option>
 
-                            </select>
-                        </div>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
@@ -47,7 +47,7 @@
                     active: (initial != "OFF")
                 },
                 toggleButton: () => {
-                    if(this.state.active) {
+                    if (this.state.active) {
                         mainThing.$http.post(`api/rooms/8126/modules/${ID}`, {
                             status: "OFF"
                         }).then((stuff) => {
