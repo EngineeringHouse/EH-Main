@@ -1,0 +1,87 @@
+FORMAT: 1A
+HOST: http://ehsmartrooms.rh.rit.edu/api
+
+# EH Main
+
+Smartrooms API Documentation
+
+## Rooms [/rooms/{room_id}/config]
+
+### Check Room Config [GET]
+
+This is the endpoint you will hit to get a room's configuration in json format to verify that what the server has stored for your room is actually what exists.
+
+If there is a discrepancy in the config you have, you need to update it on the server.
++ Response 200 (application/json)
+
+        
+        {
+            "room_id":01,
+            "modules": [
+                {
+                    "type": "led",
+                    "length": "1 meter",
+                    "module_id": "EH-LED-01"
+                }, {
+                    "type": "blind",
+                    "module_id": "EH-BLIND-01"
+                }
+            ]
+        }
+
+### Update Room Config [POST]
+
+A new module was added or one was removed so now you have to update the config stored on the server. This is the endpoint for doing that.
+In this example another blind was added, the original LED module was updated, and the original blind was removed.
+
++ Request (application/json)
+
+        {
+            "add": [
+                {
+                    "type": "blind",
+                    "module_id": "EH-BLIND-02"
+                }
+            ],
+            "update": [
+                {
+                    "type": "led",
+                    "length": "1 meter",
+                    "module_id": "EH-LED-01"
+                }
+            ],
+            "remove": [
+                {
+                    "type": "blind",
+                    "module_id": "EH-BLIND-01"
+                }
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/room/01/
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
