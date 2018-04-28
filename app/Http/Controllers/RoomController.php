@@ -8,15 +8,15 @@ use Illuminate\Http\Request;
 class RoomController extends Controller
 {
 
-    public function get(Request $request, $room_id){
+    public function get(Request $request, $room_number){
 
-        return Room::all()->find($room_id);
+        return Room::where("room_number","=",$room_number)->get();
 
     }
 
-    public function update(Request $request, $room_id){
+    public function update(Request $request, $room_number){
 
-        $room = $this->get($request, $room_id);
+        $room = $this->get($request, $room_number);
         $modules = $room->modules();
 
         if($request->has('add')){

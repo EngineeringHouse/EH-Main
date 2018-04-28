@@ -15,14 +15,15 @@ class ModuleChange implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $room;
+    public $roomNumber;
 
     public $changedModule;
 
-    public function __construct(Module $changedModule)
+    public function __construct(Module $changedModule, $roomNumber)
     {
 
         $this->changedModule = $changedModule;
+        $this->roomNumber = $roomNumber;
 
     }
 

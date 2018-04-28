@@ -17,7 +17,7 @@ class CreateModulesTable extends Migration
             $table->increments('id');
             $table->text('i2c_address');
             $table->text('type');
-            $table->json('data');
+            $table->text('status');
             $table->integer('room_id')->unsigned()->index();
             $table->foreign('room_id')->references('id')->on('rooms');
             $table->timestamps();

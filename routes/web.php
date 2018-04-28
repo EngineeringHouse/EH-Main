@@ -11,8 +11,6 @@
 |
 */
 
-use App\Events\ModuleChange;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -24,17 +22,6 @@ Route::get('/', function () {
     }
 
     return view('auth.login');
-
-});
-
-Route::get('/broadcastTest',function(){
-
-    $user = User::all()->first();
-    $room = $user->room();
-    $module = $room->modules()->first();
-    event(new ModuleChange($module));
-
-    return redirect("/home");
 
 });
 

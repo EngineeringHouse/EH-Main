@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
 
+    protected $appends = ['modules'];
     protected $fillable = ['room_number'];
+    protected $hidden = ['created_at','updated_at'];
+
+    public function getModulesAttribute(){
+
+        return $this->modules()->get();
+
+    }
 
     public function modules(){
 

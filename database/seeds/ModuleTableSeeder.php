@@ -18,12 +18,9 @@ class ModuleTableSeeder extends Seeder
 
         $room->modules()->create([
 
-            'i2c_address' => "0x04",
-            'type' => "led",
-            'data' => json_encode([
-                "length"=>1,
-                "status"=>"OFF",
-            ])
+            'i2c_address' => '0x04',
+            'type' => 'led',
+            'status' => 'OFF'
 
         ]);
     }

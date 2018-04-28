@@ -17,5 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('rooms/{room_id}','RoomController@get');
-Route::post('rooms/{room_id}','RoomController@update');
+Route::group(['middleware' => ['api']], function () {
+
+    Route::post('rooms/{room_number}/modules/{module_id}', 'ModuleController@update');
+
+    Route::get('rooms/{room_number}', 'RoomController@get');
+    Route::post('rooms/{room_number}', 'RoomController@update');
+
+});
+
