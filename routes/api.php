@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('rooms/{room_id}','RoomController@get');
+Route::post('rooms/{room_id}','RoomController@update');

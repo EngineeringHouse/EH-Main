@@ -1,6 +1,14 @@
+import Echo from "laravel-echo"
 
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '161ccb0b7e8071fb8505',
+    cluster: 'eu',
+    encrypted: true
+});
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
