@@ -28,4 +28,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/smart', 'SmartController@index')->name('smartRooms');
+Route::get('/rooms', 'SmartController@index')->name('smartRooms');
