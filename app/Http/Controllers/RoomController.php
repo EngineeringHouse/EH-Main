@@ -10,7 +10,7 @@ class RoomController extends Controller
 
     public function get(Request $request, $room_number){
 
-        return Room::where("room_number","=",$room_number)->get();
+        return Room::where("room_number","=",$room_number)->first();
 
     }
 
