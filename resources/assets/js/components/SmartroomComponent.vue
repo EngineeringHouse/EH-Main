@@ -5,6 +5,9 @@
             <smart-card v-for="item in items"
                         v-bind:title="`(${item.id}) ${item.type}`"
                         v-bind:options="types[item.type]"
+                        v-bind:itemID="item.id"
+                        v-bind:initial="item.status"
+                        @updated="updateItems"
                         :key="item.id">
             </smart-card>
 
@@ -25,25 +28,7 @@
                         id: "1",
                         "i2c_address": "0x04",
                         "type": "led",
-                        "data": "{\"length\":1,\"status\":\"OFF\"}",
-                        "room_id": 1,
-                        "created_at": "2018-04-28 01:22:25",
-                        "updated_at": "2018-04-28 01:22:25"
-                    },
-                    {
-                        id: "2",
-                        "i2c_address": "0x08",
-                        "type": "led",
-                        "data": "{\"length\":1,\"status\":\"OFF\"}",
-                        "room_id": 1,
-                        "created_at": "2018-04-28 01:22:25",
-                        "updated_at": "2018-04-28 01:22:25"
-                    },
-                    {
-                        id: "3",
-                        "i2c_address": "0x0B",
-                        "type": "led",
-                        "data": "{\"length\":1,\"status\":\"ON\"}",
+                        "status": "WHITE",
                         "room_id": 1,
                         "created_at": "2018-04-28 01:22:25",
                         "updated_at": "2018-04-28 01:22:25"
@@ -80,6 +65,12 @@
                             human: "fade between colors type-2",
                             visible: true,
                             value: 4
+                        },
+                        {
+                            name: "OFF",
+                            human: "turn the lights off",
+                            visible: true,
+                            value: 5
                         }
                     ],
                     blind: [
@@ -105,10 +96,23 @@
                 }
             }
         },
-        mounted() {
-            this.$http.get("/api/rooms/8126").then(function(r) {
-
+        created() {
+            this.$http.get("/api/rooms/8126").then((r) => {
+                this.items = r.data.modules;
+                console.log(this.items);
             })
+        },
+        methods: {
+            updateItems(newData) {
+                for(let [i, item] of this.items.entries()) {
+                    if (item.id == newData.id) {
+                        this.items[i] = newData;
+                        break;
+                    }
+                }
+                console.log("SUCCESS...!");
+                console.log(this.items);
+            }
         }
     };
 </script>
