@@ -39,37 +39,7 @@ class HomeController extends Controller
                         "Hannah"=>"Maybe",
                     ]
                 ],
-            ],
-            "Wednesday, April 11th, 2018"=>[
-                [
-                    "name"=>"Test Event 2",
-                    "host"=>"Lukas Yelle",
-                    "desc"=>"Another test event.",
-                    "when"=>"Wednesday, April 11th, 2018 at 12:00 PM",
-                    "length"=>"2 hours",
-                    "guests"=>[
-                      "Lukas"=>"Going",
-                      "Kel"=>"Going",
-                      "Hannah"=>"Maybe",
-                    ]
-                ]
-            ],
-            "Thursday, April 12th, 2018"=>[
-                [
-                    "name"=>"Test Event 3",
-                    "host"=>"Lukas Yelle",
-                    "desc"=>"Another test event.",
-                    "when"=>"Thursday, April 12th, 2018 at 12:00 PM",
-                    "length"=>"2 hours",
-                    "guests"=>[
-                        "Lukas"=>"Going",
-                        "Kel"=>"Going",
-                        "Hannah"=>"Maybe",
-                    ]
-                ]
-            ],
-            "Friday, April 13th, 2018"=>[]
-
+            ]
         ];
 
         return view('home')->with("week", $week);

@@ -31,16 +31,7 @@ class RoomController extends Controller
 
             // Remove existing modules.
             $remove = $request->input('remove');
-            foreach($remove as $removeModule){
-
-                $module = $modules->find($removeModule->id);
-                if($module->type == $removeModule->type){
-
-                    $modules->detatch($removeModule->id);
-
-                }
-
-            }
+            $modules->detatch($remove);
 
         }
 
