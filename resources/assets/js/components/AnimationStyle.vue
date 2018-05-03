@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "AnimationStyle.vue"
+        name: "AnimationStyle"
     }
 </script>
 
