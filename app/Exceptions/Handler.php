@@ -35,7 +35,7 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
-    public function report (Exception $exception)
+    public function report(Exception $exception)
     {
         parent::report($exception);
     }
@@ -43,12 +43,12 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param Request $request
-     * @param Exception                $exception
+     * @param Request   $request
+     * @param Exception $exception
      *
      * @return Response
      */
-    public function render ($request, Exception $exception)
+    public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
     }

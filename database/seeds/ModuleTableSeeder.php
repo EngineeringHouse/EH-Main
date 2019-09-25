@@ -1,7 +1,6 @@
 <?php
 
 use App\Room;
-use App\Module;
 use Illuminate\Database\Seeder;
 
 class ModuleTableSeeder extends Seeder
@@ -11,15 +10,15 @@ class ModuleTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run ()
+    public function run()
     {
         $room = Room::all()->first();
 
         $room->modules()->create([
 
             'i2c_address' => '0x04',
-            'type' => 'led',
-            'status' => 'OFF'
+            'type'        => 'led',
+            'status'      => 'OFF',
 
         ]);
     }

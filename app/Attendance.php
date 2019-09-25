@@ -4,21 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class attendance extends Model
+class Attendance extends Model
 {
-
-    public function event ()
+    public function event()
     {
-
         return $this->belongsTo(Event::class);
-
     }
 
-    public function user ()
+    public function user()
     {
-
         return $this->belongsTo(Member::class);
-
     }
-
 }
