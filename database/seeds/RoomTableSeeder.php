@@ -10,10 +10,10 @@ class RoomTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run ()
+    public function run()
     {
         DB::table('rooms')->insert([
-            'room_number' => 8126
+            'room_number' => 8126,
         ]);
     }
 }
