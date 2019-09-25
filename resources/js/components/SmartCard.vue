@@ -48,7 +48,7 @@
                 },
                 toggleButton: () => {
                     if (this.state.active) {
-                        mainThing.$http.post(`api/rooms/8126/modules/${ID}`, {
+                        mainThing.$http.post(`/api/rooms/8126/modules/${ID}`, {
                             status: "OFF"
                         }).then((stuff) => {
                             console.log(stuff);
@@ -70,7 +70,7 @@
                     }
                 }
                 console.log(key);
-                mainThing.$http.post(`api/rooms/8126/modules/${ID}`, {
+                mainThing.$http.post(`/api/rooms/8126/modules/${ID}`, {
                     status: key.name
                 }).then((stuff) => {
                     console.log(stuff);

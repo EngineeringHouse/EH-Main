@@ -8,18 +8,52 @@ use Illuminate\Http\Request;
 class RoomController extends Controller
 {
 
-    public function get(Request $request, $room_number){
+    /**
+     *
+     * Display the room view
+     *
+     **/
+    public function index ()
+    {
 
-        return Room::where("room_number","=",$room_number)->first();
+        return view('room');
 
     }
 
-    public function update(Request $request, $room_number){
+    /**
+     *
+     * Get the room matching a given room_number
+     *
+     * @param Request $request     : The http request
+     * @param Integer $room_number : The room to get
+     *
+     * @return: App\Room instance
+     *
+     **/
+    public function get (Request $request, $room_number)
+    {
+
+        return Room::where("room_number", "=", $room_number)->first();
+
+    }
+
+    /**
+     *
+     * Update the modules a given room has
+     *
+     * @param Request $request     : The http request
+     * @param Integer $room_number : The room to get
+     *
+     * @return: App\Room instance
+     *
+     **/
+    public function update (Request $request, $room_number)
+    {
 
         $room = $this->get($request, $room_number);
         $modules = $room->modules();
 
-        if($request->has('add')){
+        if ($request->has('add')) {
 
             // Add modules.
             $add = $request->input('add');
@@ -27,7 +61,7 @@ class RoomController extends Controller
 
         }
 
-        if($request->has('remove')){
+        if ($request->has('remove')) {
 
             // Remove existing modules.
             $remove = $request->input('remove');
@@ -36,6 +70,7 @@ class RoomController extends Controller
         }
 
         $room->save();
+
         return $room;
 
     }

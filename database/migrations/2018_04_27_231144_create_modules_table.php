@@ -11,7 +11,7 @@ class CreateModulesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up ()
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->increments('id');
@@ -29,7 +29,7 @@ class CreateModulesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down ()
     {
         Schema::dropIfExists('modules');
     }

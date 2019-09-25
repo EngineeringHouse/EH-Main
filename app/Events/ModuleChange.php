@@ -19,7 +19,7 @@ class ModuleChange implements ShouldBroadcast
 
     public $changedModule;
 
-    public function __construct(Module $changedModule, $roomNumber)
+    public function __construct (Module $changedModule, $roomNumber)
     {
 
         $this->changedModule = $changedModule;
@@ -27,7 +27,7 @@ class ModuleChange implements ShouldBroadcast
 
     }
 
-    public function broadcastOn()
+    public function broadcastOn ()
     {
         return new Channel('rooms');
     }

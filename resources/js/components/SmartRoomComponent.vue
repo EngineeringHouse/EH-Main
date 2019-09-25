@@ -19,7 +19,7 @@
     import SmartCard from "./SmartCard";
 
     export default {
-        name: "SmartroomComponent.vue",
+        name: "SmartRoomComponent",
         components: {SmartCard},
         data() {
             return {

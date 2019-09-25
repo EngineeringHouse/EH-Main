@@ -11,9 +11,8 @@ class ModuleTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run ()
     {
-
         $room = Room::all()->first();
 
         $room->modules()->create([

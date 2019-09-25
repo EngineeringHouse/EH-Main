@@ -1,6 +1,7 @@
 import Echo from "laravel-echo"
 
 window._ = require('lodash');
+window.Pusher = require('pusher-js');
 window.Popper = require('popper.js').default;
 
 window.Echo = new Echo({
@@ -18,8 +19,6 @@ window.Echo = new Echo({
 
 try {
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
 } catch (e) {}
 
 /**
