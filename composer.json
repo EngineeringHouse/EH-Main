@@ -1,6 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "engineeringhouse/ehmain",
+    "description": "EHMain - Overarching services suite for floor operations",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
